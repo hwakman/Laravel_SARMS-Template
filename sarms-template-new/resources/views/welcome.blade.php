@@ -5,74 +5,89 @@
   <div class="col-lg-1"></div>
   <div class="col-lg-10">
     <div class="well well-sm" style="font-size: 1.25em"><b>ハードウェア台帳一覧</b></div>
-    <form style="width:100%" action="/" method="post" class="form-inline well">
-      <table>
-        @for ($i = 0 ; $i < 3 ; $i++)
-        <tr>
-          <td>
-            <label>
-              <select class="form-control" id="sel1">
-                <option>ハードウェア管理番号 </option>
-                <option>所属</option>
-                <option>IPアドレス</option>
-                <option>廃棄日</option>
-              </select>
-            </label>
-          </td>
-          <td style="width:100%">
-            <label style="width:100%">
-              <input  style="width:100%" type="text" class="form-control">
-            </label>
-          </td>
-          <td>
-            <label>
-              <select class="form-control" id="sel1">
-                <option>を含む</option>
-                <option>と等しい</option>
-                <option>以上（以降）</option>
-                <option>以下（以前）</option>
-                <option>を含まない</option>
-              </select>
-            </label>
-          </td>
-          <td>
-            <label>
-              <select class="form-control" id="sel1">
-                <option>かつ</option>
-                <option>または</option>
-              </select>
-            </label>
-          </td>
-          <td>
-            <label>
-              <input type="button" value="-" class="btn btn-default">
-            </label>
-          </td>
-          <td>
-            <label>
-              <input type="button" value="+" class="btn btn-default">
-            </label>
-          </td>
-        </tr>
-        @endfor
-        <tr>
-          <td colspan="6">
-            <button class="btn btn-default" type="button" name="button"><b>検索</b></button>
-          </td>
-        </tr>
-      </table>
-    </form>
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse_search" style="font-size: 1.25em"><b>サーチ</b></div>
+        <div class="panel-body panel-collapse collapse in"  id="collapse_search">
+          <form style="width:100%" action="/" method="post" class="form-inline">
+            <table>
+              @for ($i = 0 ; $i < 3 ; $i++)
+              <tr>
+                <td>
+                  <label>
+                    <select class="form-control" id="sel1">
+                      <option>ハードウェア管理番号 </option>
+                      <option>所属</option>
+                      <option>IPアドレス</option>
+                      <option>廃棄日</option>
+                    </select>
+                  </label>
+                </td>
+                <td style="width:100%">
+                  <label style="width:100%">
+                    <input  style="width:100%" type="text" class="form-control">
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <select class="form-control" id="sel1">
+                      <option>を含む</option>
+                      <option>と等しい</option>
+                      <option>以上（以降）</option>
+                      <option>以下（以前）</option>
+                      <option>を含まない</option>
+                    </select>
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <select class="form-control" id="sel1">
+                      <option>かつ</option>
+                      <option>または</option>
+                    </select>
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <input type="button" value="-" class="btn btn-default">
+                  </label>
+                </td>
+                <td>
+                  <label>
+                    <input type="button" value="+" class="btn btn-default">
+                  </label>
+                </td>
+              </tr>
+              @endfor
+              <tr>
+                <td colspan="6">
+                  <button class="btn btn-default" type="button" name="button"><b>検索</b></button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
     <hr>
     <div>
       <label>
-        <input type="button" class="btn btn-primary" value="Register">
-        <input type="button" class="btn btn-warning" value="CSV Export">
-        <input type="button" class="btn btn-success" value="History CSV Export">
-        <input type="button" class="btn btn-danger" value="Delete CSV info">
+        <input type="button" class="btn btn-primary" value="新規申請">
+        <input type="button" class="btn btn-warning" value="CSV出力">
+        <input type="button" class="btn btn-success" value="履歴CSV出力">
+        <input type="button" class="btn btn-danger" value="削除情報CSV出力">
+
       </label>
     </div>
     <hr>
     <div class="panel-group" id="accordion">
+      <select class="form-control" style="width:13%" id="sel1">
+        <option>1-15 を表示</option>
+        <option>1-20 を表示</option>
+        <option>1-25 を表示</option>
+        <option>1-50 を表示</option>
+        <option>1-100 を表示</option>
+      </select>
       <table class="table table-bordered" style="text-align:center">
         <thead>
           <tr style="background-color:lightgray;color:white">
@@ -87,12 +102,12 @@
         @for ($i = 1; $i < 16; $i++)
         <tr>
           <td>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $i }}"><img src="{{ asset('img/plus.png') }}" width="25" height="25"></a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $i }}"><img src="{{ asset('img/plus.png') }}" width="20" height="20"></a>
           </td>
-          <td><a href="#"><img src="{{ asset('img/edit.png') }}" width="25" height="25"></a></td>
-          <td><a href="#"><img src="{{ asset('img/delete.png') }}" width="25" height="25"></a></td>
-          <td><a href="#"><img src="{{ asset('img/inv.png') }}" width="25" height="25"></a></td>
-          <td><a href="detail?code=HW0000{{$i}}">17001{{$i}}</a></td>
+          <td><a href="#"><img src="{{ asset('img/edit.png') }}" width="20" height="20"></a></td>
+          <td><a href="#"><img src="{{ asset('img/delete.png') }}" width="20" height="20"></a></td>
+          <td><a href="#"><img src="{{ asset('img/inv.png') }}" width="20" height="20"></a></td>
+          <td><a href="#">17001{{$i}}</a></td>
           <td>福岡県/総務部/防災危機管理局消防防災指導課</td>
           <td>10.134.{{$i}}.{{$i+1}}</td>
           @if($i < 10)
@@ -125,132 +140,7 @@
                 <br><p>テスト</p>
               </li>
               <li>
-                <b>IPアドレス（無線）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>IPアドレス（収）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>利用者機器管理者</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>設置地区</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>庁舎名</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>階</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>棟</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>調達形態区分</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>購入／リース</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>機器種別</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>接続ネットワーク名</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>端末種別</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>システム名称</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>コンピューター名</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>コンピューター名（収）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>ドメイン名(収)</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>デフォルトゲートウェイアドレス（有線）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>デフォルトゲートウェイアドレス（無線）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>ソフトウェア台帳インストール数（ソ）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>PCベンダー（収）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>PC機種（収）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>使用者によるソフトウェア追加導入削除（シ）</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>調達情報</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>ハードウェア備考</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>共有フォルダ等バックアップ</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>状態</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>貸出日</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>返却予定日</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>調達日</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>廃棄日</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>廃棄方法</b>
-                <br><p>テスト</p>
-              </li>
-              <li>
-                <b>廃棄作業者名</b>
-                <br><p>テスト</p>
+                <a href="#" data-toggle="modal" data-target="#myModal">More</a>
               </li>
             </ul>
           </td>
@@ -273,5 +163,46 @@
   </div>
   <div class="col-lg-1"></div>
   <div class="col-lg-12 well"></div>
+  <button onclick="openA()" id="myBtn" title="Go to top">メニュー</button>
+  @include('sidenav')
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button style="color:white" type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><b>ハードウェア台帳モーダル</b></h4>
+        </div>
+        <div class="modal-body">
+          <ul style="list-style-type:square;text-align:left">
+            <li>
+              <b>ハードウェア管理番号</b>
+              <br><p>170011<p>
+            </li>
+            <li>
+              <b>所属</b>
+              <br><p>福岡県/総務部/防災危機管理局消防防災指導課</p>
+            </li>
+            <li>
+              <b>IPアドレス（有線）</b>
+              <br><p>10.134.1.2</p>
+            </li>
+            <li>
+              <b>調達形態区分</b>
+              <br><p>所属調達</p>
+            </li>
+            <li>
+              <b>接続ネットワーク名</b>
+              <br><p>共用ネットワーク</p>
+            </li>
+            <li>
+              <b>廃棄日</b>
+              <br><p>2018/03/01</p>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
