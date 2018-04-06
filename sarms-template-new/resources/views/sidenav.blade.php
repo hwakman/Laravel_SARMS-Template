@@ -10,3 +10,4 @@
   <a href="#">その他</a>
   <a href="#">ログアウト</a>
 </div>
+<button onclick="openA()" id="myBtn" title="Go to top">メニュー</button>

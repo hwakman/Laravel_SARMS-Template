@@ -72,11 +72,16 @@
     <hr>
     <div>
       <label>
-        <input type="button" class="btn btn-primary" value="新規申請">
-        <input type="button" class="btn btn-warning" value="CSV出力">
-        <input type="button" class="btn btn-success" value="履歴CSV出力">
-        <input type="button" class="btn btn-danger" value="削除情報CSV出力">
-
+        <a href="hardware-form"><input type="button" class="btn btn-primary" value="新規申請"></a>
+      </label>
+      <label class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">CSV出力
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">CSV出力</a></li>
+          <li><a href="#">履歴CSV出力</a></li>
+          <li><a href="#">削除情報CSV出力</a></li>
+        </ul>
       </label>
     </div>
     <hr>
@@ -163,7 +168,6 @@
   </div>
   <div class="col-lg-1"></div>
   <div class="col-lg-12 well"></div>
-  <button onclick="openA()" id="myBtn" title="Go to top">メニュー</button>
   @include('sidenav')
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">

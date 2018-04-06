@@ -60,6 +60,9 @@
           background-color:  #4d4d4d;
           color: white;
         }
+        textarea{
+          resize: none;
+        }
         #myBtn {
             display: block; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -98,5 +101,6 @@
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
+
   </script>
 </head>
