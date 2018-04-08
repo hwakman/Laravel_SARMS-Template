@@ -102,5 +102,29 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
+    function check(){
+      var hard = document.getElementById("myForm").elements.namedItem("hard_kanrino").value;
+      var email = document.getElementById("myForm").elements.namedItem("email").value;
+      var ip = document.getElementById("myForm").elements.namedItem("ip").value;
+      if (hard == "") {
+        document.getElementById("hard_kanrino_field").classList.add("has-error");
+        document.getElementById("hard_kanrino").focus();
+        document.getElementById("help_hard").innerHTML = "* ハードウェア管理番号が入力必要です。";
+      }
+      else if (email == "") {
+        document.getElementById("email_field").classList.add("has-error");
+        document.getElementById("email").focus();
+        document.getElementById("help_email").innerHTML = "* 申請者メールが入力必要です。";
+      }
+      else if (ip == "") {
+        document.getElementById("ip_field").classList.add("has-error");
+        document.getElementById("ip").focus();
+        document.getElementById("help_ip").innerHTML = "* IPアドレスが入力必要です。";
+      }
+      else {
+        document.getElementById("myForm").submit();
+      }
+    }
+
   </script>
 </head>

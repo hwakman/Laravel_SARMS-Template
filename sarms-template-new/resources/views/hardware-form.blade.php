@@ -7,10 +7,11 @@
   <div class="container col-lg-8">
     <div class="well well-sm" style="font-size: 1.25em"><b>ハードウェア台帳登録</b></div>
     <div class="well">
-      <form class="form-horizontal" style="padding:25px">
-        <div class="form-group">
+      <form id="myForm" class="form-horizontal" style="padding:25px" method="post" action="appove">
+        <div class="form-group" id="hard_kanrino_field">
           <label>ハードウェア管理番号 :</label>
-          <input class="form-control" type="text" placeholder="ハードウェア管理番号">
+          <input id="hard_kanrino" name="hard_kanrino" class="form-control" type="text" placeholder="ハードウェア管理番号" required>
+          <span id="help_hard" class="help-block" style="color:red"></span>
         </div>
         <div class="form-group">
           <label>所属 :</label>
@@ -25,13 +26,15 @@
           <label>申請者名 :</label>
           <input class="form-control" type="text" placeholder="申請者名">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="email_field">
           <label>申請者メール :</label>
-          <input class="form-control" type="text" placeholder="メール">
+          <input id="email" name="email" class="form-control" type="text" placeholder="メール">
+          <span id="help_email" class="help-block" style="color:red"></span>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="ip_field">
           <label>IPアドレス :</label>
-          <input class="form-control" type="text" placeholder="IPアドレス">
+          <input id="ip" name="ip" class="form-control" type="text" placeholder="IPアドレス">
+          <span id="help_ip" class="help-block" style="color:red"></span>
         </div>
         <div class="form-group">
           <label>所在地 :</label>
@@ -48,7 +51,7 @@
           <textarea class="form-control" rows="3" id="location" placeholder="ノート"></textarea>
         </div>
         <div class="form-group">
-          <input type="submit" class="btn btn-info" value="適用する">
+          <input onclick="check()" type="button" class="btn btn-info" value="適用する">
           <a href="/"><input type="button" class="btn btn-warning" value="キャンセル"></a>
         </div>
       </form>
