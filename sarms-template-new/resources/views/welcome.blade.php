@@ -104,7 +104,7 @@
           </tr>
         </thead>
         <tbody>
-        @for ($i = 1; $i < 16; $i++)
+        @for ($i = 1; $i < 26; $i++)
         <tr>
           <td>
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $i }}"><img src="{{ asset('img/plus.png') }}" width="20" height="20"></a>

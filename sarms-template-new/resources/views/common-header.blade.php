@@ -77,7 +77,7 @@
         }
         .head_form{
           font-size: 1.25em;
-          background: linear-gradient(#bfbfbf, #737373);
+          background: linear-gradient(#b3b3b3, #595959);
           color: white;
           border-radius: 5px;
           border-color: lightgray;
@@ -194,8 +194,8 @@
     $(document).ready(function(){
       var now = new Date();
       var day = ("0" + now.getDate()).slice(-2);
-      var month = ("0" + (now.getMonth() + 4)).slice(-2);
-      var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      var today = (now.getFullYear()+1)+"-"+(month)+"-"+(day) ;
 
       $('#haiki_date').val(today);
     });

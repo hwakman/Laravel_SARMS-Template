@@ -7,7 +7,7 @@
   <div class="container col-lg-10">
     <div class="well well-sm head_form"><b>ハードウェア台帳保守</b></div>
     <div class="well">
-      <form id="myForm" class="form-horizontal" style="padding:25px" method="post" action="appove">
+      <form id="myForm" class="form-horizontal" style="padding:25px" method="post" action="approve">
         <div class="form-group">
           <div class="col-xs-12" id="hard_kanrino_field">
             <label class="control-label">ハードウェア管理番号 : <span style="color:red">*</span></label>
