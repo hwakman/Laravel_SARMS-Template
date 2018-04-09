@@ -63,6 +63,26 @@
         textarea{
           resize: none;
         }
+        .below_text{
+          display:none;
+          color: #666666;
+          background-color: white;
+          padding: 5px;
+          border-radius: 6px;
+        }
+        .input-group-addon:hover{
+          cursor: pointer;
+          background-color: lightgray;
+          color: black;
+        }
+        .head_form{
+          font-size: 1.25em;
+          background: linear-gradient(#bfbfbf, #737373);
+          color: white;
+          border-radius: 5px;
+          border-color: lightgray;
+          border-width: 2px;
+        }
         #myBtn {
             display: block; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -104,27 +124,96 @@
 
     function check(){
       var hard = document.getElementById("myForm").elements.namedItem("hard_kanrino").value;
+      var sinsei = document.getElementById("myForm").elements.namedItem("sinsei").value;
       var email = document.getElementById("myForm").elements.namedItem("email").value;
       var ip = document.getElementById("myForm").elements.namedItem("ip").value;
+      var ip_2 = document.getElementById("myForm").elements.namedItem("ip_2").value;
       if (hard == "") {
         document.getElementById("hard_kanrino_field").classList.add("has-error");
         document.getElementById("hard_kanrino").focus();
-        document.getElementById("help_hard").innerHTML = "* ハードウェア管理番号が入力必要です。";
+        document.getElementById("help_hard").innerHTML = "*「ハードウェア管理番号」を記載してください。";
+      }
+      else if (hard.length > 255) {
+        document.getElementById("hard_kanrino_field").classList.add("has-error");
+        document.getElementById("hard_kanrino").focus();
+        document.getElementById("help_hard").innerHTML = "* ハードウェア管理番号は255文字以内で入力してください。";
+      }
+      else if (sinsei == "") {
+        document.getElementById("sinsei_field").classList.add("has-error");
+        document.getElementById("sinsei").focus();
+        document.getElementById("help_sinsei").innerHTML = "*「申請者」を記載してください。";
       }
       else if (email == "") {
         document.getElementById("email_field").classList.add("has-error");
         document.getElementById("email").focus();
-        document.getElementById("help_email").innerHTML = "* 申請者メールが入力必要です。";
+        document.getElementById("help_email").innerHTML = "*「申請者メール」を記載してください。";
       }
       else if (ip == "") {
         document.getElementById("ip_field").classList.add("has-error");
         document.getElementById("ip").focus();
-        document.getElementById("help_ip").innerHTML = "* IPアドレスが入力必要です。";
+        document.getElementById("help_ip").innerHTML = "*「IPアドレス（有線）」を記載してください。";
+      }
+      else if (ip_2 == "") {
+        document.getElementById("ip_field_2").classList.add("has-error");
+        document.getElementById("ip_2").focus();
+        document.getElementById("help_ip_2").innerHTML = "*「IPアドレス（無線）」を記載してください。";
       }
       else {
         document.getElementById("myForm").submit();
       }
     }
+    function input_hard(){
+      document.getElementById("hard_kanrino_field").classList.remove("has-error");
+      document.getElementById("help_hard").innerHTML = "";
+    }
+    function input_sinsei(){
+      document.getElementById("sinsei_field").classList.remove("has-error");
+      document.getElementById("help_sinsei").innerHTML = "";
+    }
+    function input_email(){
+      document.getElementById("email_field").classList.remove("has-error");
+      document.getElementById("help_email").innerHTML = "";
+    }
+    function input_ip(){
+      document.getElementById("ip_field").classList.remove("has-error");
+      document.getElementById("help_ip").innerHTML = "";
+    }
+    function input_ip2(){
+      document.getElementById("ip_field_2").classList.remove("has-error");
+      document.getElementById("help_ip_2").innerHTML = "";
+    }
+    $(document).ready(function(){
+      var now = new Date();
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 1)).slice(-2);
+      var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+      $('#sinsei_date').val(today);
+    });
+
+    $(document).ready(function(){
+      var now = new Date();
+      var day = ("0" + now.getDate()).slice(-2);
+      var month = ("0" + (now.getMonth() + 4)).slice(-2);
+      var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+      $('#haiki_date').val(today);
+    });
+
+    $(document).ready(function(){
+      $("#data_1").click(function(){
+        $("#p1").toggle("fast");
+      });
+      $("#data_2").click(function(){
+        $("#p2").toggle("fast");
+      });
+      $("#data_3").click(function(){
+        $("#p3").toggle("fast");
+      });
+      $("#data_4").click(function(){
+        $("#p4").toggle("fast");
+      });
+    });
 
   </script>
 </head>

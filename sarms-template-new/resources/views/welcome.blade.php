@@ -93,7 +93,7 @@
         <option>1-50 を表示</option>
         <option>1-100 を表示</option>
       </select>
-      <table class="table table-bordered" style="text-align:center">
+      <table class="table table-sm" style="text-align:center">
         <thead>
           <tr style="background-color:lightgray;color:white">
             <td colspan="4"></td>
@@ -113,7 +113,7 @@
           <td><a href="#"><img src="{{ asset('img/delete.png') }}" width="20" height="20"></a></td>
           <td><a href="#"><img src="{{ asset('img/inv.png') }}" width="20" height="20"></a></td>
           <td><a href="#">17001{{$i}}</a></td>
-          <td>福岡県/総務部/防災危機管理局消防防災指導課</td>
+          <td>福岡県/保管PC</td>
           <td>10.134.{{$i}}.{{$i+1}}</td>
           @if($i < 10)
           <td>2018/03/0{{$i}}</td>

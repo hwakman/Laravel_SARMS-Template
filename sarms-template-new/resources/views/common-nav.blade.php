@@ -44,8 +44,14 @@
         <li><a href="#">管理情報</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 構築業者管理者</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> ログアウト</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> 構築業者管理者<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">齟齬設定</a></li>
+            <li><a href="#">パスワード設定</a></li>
+            <li><a href="#" onclick="return confirm('are you sure ?')">ログアウト</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
