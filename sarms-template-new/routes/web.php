@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('hardware-form',function() {
     return view('hardware-form');
 });
+
+Route::post('approve',function(){
+  return view('approve');
+});

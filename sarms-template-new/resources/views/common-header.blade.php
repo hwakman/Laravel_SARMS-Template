@@ -83,6 +83,16 @@
           border-color: lightgray;
           border-width: 2px;
         }
+        .confirm_form td{
+          background-color: white;
+          width: 70%;
+        }
+        .alert{
+          text-align: center;
+        }
+        .p_empty{
+          background-color: red;
+        }
         #myBtn {
             display: block; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -214,6 +224,13 @@
         $("#p4").toggle("fast");
       });
     });
+
+    function backlink(){
+      history.back()
+    }
+    function goHome(){
+      window.location = "/";
+    }
 
   </script>
 </head>

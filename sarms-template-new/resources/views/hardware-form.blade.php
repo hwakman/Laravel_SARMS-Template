@@ -29,14 +29,14 @@
           </div>
           <div class="col-xs-4">
             <label class="control-label">文書番号 :</label>
-            <input class="form-control" type="text" placeholder="文書番号">
+            <input class="form-control" name="number" type="text" placeholder="文書番号">
           </div>
         </div>
         <!-- end row 2 -->
         <div class="form-group row">
           <div class="col-xs-12">
             <label class="control-label">所属 : <span style="color:red">*</span></label>
-            <select class="form-control">
+            <select class="form-control" name="sosiki">
               <option>福岡県</option>
               <option>福岡県/秘書室</option>
               <option>福岡県/秘書室/秘書室</option>
@@ -48,7 +48,7 @@
         <div class="form-group row">
           <div class="col-xs-12">
             <label class="control-label">機器種別 : <span style="color:red">*</span></label>
-            <select class="form-control">
+            <select class="form-control" name="device">
               <option>パソコン</option>
               <option>サーバ</option>
               <option>プリンター</option>
@@ -60,7 +60,7 @@
         <div class="form-group row">
           <div class="col-xs-6">
             <label class="control-label">調達形態区分 : <span style="color:red">*</span></label>
-            <select class="form-control">
+            <select class="form-control" name="product_type">
               <option>情報政策課一括調達</option>
               <option selected="selected">所属調達</option>
               <option>業者持込み</option>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-xs-6">
             <label class="control-label">購入／リース : <span style="color:red">*</span></label>
-            <select class="form-control">
+            <select class="form-control" name="reesu">
               <option>購入</option>
               <option>リース</option>
               <option>その他</option>
@@ -80,7 +80,7 @@
           <div class="col-xs-6">
             <label class="control-label">室等 : </label>
             <div class="input-group" style="width:100%">
-              <input class="form-control" type="text" placeholder="室等" required>
+              <input class="form-control" name="rooms" type="text" placeholder="室等" required>
               <span class="input-group-addon" id="data_1">説明</span>
             </div>
             <div id="p1" class="below_text">
@@ -94,7 +94,7 @@
           <div class="col-xs-6">
             <label class="control-label">利用者機器管理者 : </label>
             <div class="input-group" style="width:100%">
-              <input class="form-control" type="text" placeholder="利用者機器管理者" required>
+              <input class="form-control" name="equid" type="text" placeholder="利用者機器管理者" required>
               <span class="input-group-addon" id="data_2">説明</span>
             </div>
             <div id="p2" class="below_text">
@@ -120,7 +120,7 @@
           <div class="col-xs-12">
             <label class="control-label">使用者によるソフトウェア追加導入削除（シ） : <span style="color:red">*</span></label>
             <div class="input-group" style="width:100%">
-              <select class="form-control">
+              <select class="form-control" name="delete_user">
                 <option>可能</option>
                 <option>施錠場所に設置のため不可能</option>
                 <option>技術的制限のため不可能</option>
@@ -137,27 +137,27 @@
         <div class="form-group">
           <div class="col-xs-6">
             <label class="control-label">調達情報 :</label>
-            <textarea class="form-control" rows="4" placeholder="調達情報"></textarea>
+            <textarea class="form-control" name="product_info" rows="4" placeholder="調達情報"></textarea>
           </div>
           <div class="col-xs-6">
             <label class="control-label">ハードウェア備考 :</label>
-            <textarea class="form-control" rows="4" placeholder="ハードウェア備考"></textarea>
+            <textarea class="form-control" name="hard_remark" rows="4" placeholder="ハードウェア備考"></textarea>
           </div>
         </div>
         <!-- end row 9 -->
         <div class="form-group">
           <div class="col-xs-3">
             <label class="control-label">申請日 : <span style="color:red">*</span></label>
-            <input id="sinsei_date" type="date" class="form-control">
+            <input id="sinsei_date" name="sinsei_date" type="date" class="form-control">
           </div>
           <div class="col-xs-3">
             <label class="control-label">廃棄日 :</label>
-            <input id="haiki_date" type="date" class="form-control">
+            <input id="haiki_date" name="haiki_date" type="date" class="form-control">
           </div>
           <div class="col-xs-6">
             <label class="control-label">廃棄作業者名 :</label>
             <div class="input-group">
-              <input class="form-control" type="text" placeholder="廃棄作業者名" required>
+              <input class="form-control" name="disposal_user" type="text" placeholder="廃棄作業者名" required>
               <span class="input-group-addon" id="data_4">説明</span>
             </div>
             <div id="p4" class="below_text">
@@ -170,7 +170,7 @@
         <div class="form-group">
           <div class="col-xs-12">
             <p style="color:gray"><span style="color:red">*</span>･･･必須項目</p>
-            <input onclick="check()" type="button" class="btn btn-primary" value=" 新規申請 内容確認 ">
+            <input onclick="check()" type="button" class="btn btn-primary" value=" 新規申請">
             <a href="/"><input type="button" class="btn btn-default" value=" 一覧に戻る"></a>
           </div>
         </div>
